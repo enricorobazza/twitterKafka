@@ -1,3 +1,4 @@
 .venv
 .env
 zk-single-kafka-single
+__pycache__
