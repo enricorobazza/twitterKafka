@@ -37,7 +37,7 @@ class StdOutListener(StreamListener):
     print("Sending to producer", dados)
     producer.send(topico, value=dados)
     return True
-    
+
   def on_error(self, status):
     print (status)
 
