@@ -49,7 +49,7 @@ producer = KafkaProducer(bootstrap_servers=[broker],
 
 l = StdOutListener()
 stream = Stream(auth, l)
-stream.filter(track=["covid19", "corona virus"])
+stream.filter(track=["bolsonaro"])
 
 
 # api = tweepy.API(auth)

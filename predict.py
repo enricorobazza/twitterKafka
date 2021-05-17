@@ -7,13 +7,13 @@ from joblib import dump, load
 
 class SentimentPrediction:
     def __init__(self):
+        self.df = pd.read_csv("imdb-reviews-pt-br.csv").sample(1000, random_state=42)
+        self.df.sentiment = self.df['sentiment'].map({'pos': 1, 'neg': 0})
         try:
             self.clf = load('model.joblib') 
         except OSError as e:
             print("Model not found, creating...")
-            self.df = pd.read_csv("imdb-reviews-pt-br.csv").sample(1000, random_state=42)
-
-            self.df.sentiment = self.df['sentiment'].map({'pos': 1, 'neg': 0})
+            
 
             vect = CountVectorizer(ngram_range=(1, 1))
             vect.fit(self.df.text_pt)
