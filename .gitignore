@@ -2,3 +2,4 @@
 .env
 zk-single-kafka-single
 __pycache__
+.vscode
